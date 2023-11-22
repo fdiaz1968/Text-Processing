@@ -2,13 +2,13 @@
 
 # Project information
 site_name: Home
-site_url: https://github.com/fralfaro/DS-Python-Course
-site_author: Francisco Alfaro
+site_url: https://github.com/ferdiaz1968/Text-Processing
+site_author: Fernando Díaz
 site_description:
 
 # Repository
-repo_name: fralfaro/DS-Python-Course
-repo_url: https://github.com/fralfaro/DS-Python-Course
+repo_name: ferdiaz1968/Text-Processing
+repo_url: https://github.com/ferdiaz1968/Text-Processing
 edit_uri: ''
 
 
@@ -68,11 +68,11 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/fralfaro
+      link: https://github.com/ferdiaz1968
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/faam/
+      link: https://www.linkedin.com/in/frdiazh
     - icon: fontawesome/solid/globe
-      link: https://fralfaro.github.io/portfolio/
+      link: https://comercial.usm.cl/academicos/fernando-diaz/
 
 
 # Plugins
