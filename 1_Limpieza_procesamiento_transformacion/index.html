@@ -10,14 +10,14 @@
         <meta name="author" content="Fernando Díaz">
       
       
-        <link rel="canonical" href="https://github.com/ferdiaz1968/Text-Processing/__init__/">
+        <link rel="canonical" href="https://github.com/ferdiaz1968/Text-Processing/1_Limpieza_procesamiento_transformacion/">
       
       <link rel="icon" href="../images/logo_python.svg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>-*- coding: utf-8 -*- - Home</title>
+        <title>Fundamentos de Procesamiento Tectual - Home</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fundamentos-de-procesamiento-tectual" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -*- coding: utf-8 -*-
+              Fundamentos de Procesamiento Tectual
             
           </span>
         </div>
@@ -375,6 +380,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -387,8 +394,6 @@
               
                 
 
-
-  <h1>-*- coding: utf-8 -*-</h1>
 
 <script>
 (function (global, factory) {
@@ -1419,13 +1424,36 @@ Licensed under the Apache License, Version 2.0.
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="fundamentos-de-procesamiento-tectual">Fundamentos de Procesamiento Tectual<a class="anchor-link" href="#fundamentos-de-procesamiento-tectual">&#182;</a></h1><hr>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="i-cargando-quanteda-y-nuestro-primer-corpus">I. Cargando <strong>"quanteda"</strong> y nuestro primer <strong><em>corpus</em></strong><a class="anchor-link" href="#i-cargando-quanteda-y-nuestro-primer-corpus">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -1440,9 +1468,11 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-R"><pre><span></span>__<span class="n">version__</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="c1"># install.packages(&quot;quanteda&quot;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">quanteda</span><span class="p">)</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">__version__ = "0.1.0"</div>
+<div id="cell-1" class="clipboard-copy-txt"># install.packages("quanteda")
+library(quanteda)</div>
     
         </div>
     </div>
@@ -1450,6 +1480,1465 @@ Licensed under the Apache License, Version 2.0.
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Package version: 3.3.1
+Unicode version: 13.0
+ICU version: 69.1
+
+Parallel computing: 20 of 20 threads used.
+
+See https://quanteda.io for tutorials and examples.
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="que-es-un-corpus">&#191;Que es un Corpus?<a class="anchor-link" href="#que-es-un-corpus">&#182;</a></h2><p>En lingüística y procesamiento del lenguaje natural, un "corpus" se refiere a una colección estructurada y organizada de textos escritos o hablados que se utilizan para el estudio, análisis y entrenamiento de modelos de lenguaje.</p>
+<p>Un corpus puede estar compuesto por una variedad de textos, como libros, artículos, periódicos, transcripciones de audio, conversaciones grabadas, páginas web, entre otros. Estos textos pueden estar etiquetados con <strong>metadatos</strong> (<em>docvars</em>) para facilitar su búsqueda y análisis.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="corpus-data_corpus_inaugural">Corpus: data_corpus_inaugural<a class="anchor-link" href="#corpus-data_corpus_inaugural">&#182;</a></h2><p>Los discursos inaugurales son pronunciados por los presidentes de Estados Unidos cuando juran su cargo, algo que ocurre una vez cada cuatro años, el 21 de enero. Generalmente, contienen mensajes importantes sobre sus intenciones, prioridades y visión para el país.</p>
+<p>Este corpus es ampliamente utilizado en el campo del procesamiento del lenguaje natural y la lingüística computacional como una fuente de datos para entrenar y evaluar modelos de análisis de texto, clasificación de sentimientos, extracción de características lingüísticas y otros tipos de análisis de texto relacionados.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">print(data_corpus_inaugural)
+class(data_corpus_inaugural)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Corpus consisting of 59 documents and 4 docvars.
+1789-Washington :
+&#34;Fellow-Citizens of the Senate and of the House of Representa...&#34;
+
+1793-Washington :
+&#34;Fellow citizens, I am again called upon by the voice of my c...&#34;
+
+1797-Adams :
+&#34;When it was first perceived, in early times, that no middle ...&#34;
+
+1801-Jefferson :
+&#34;Friends and Fellow Citizens: Called upon to undertake the du...&#34;
+
+1805-Jefferson :
+&#34;Proceeding, fellow citizens, to that qualification which the...&#34;
+
+1809-Madison :
+&#34;Unwilling to depart from examples of the most revered author...&#34;
+
+[ reached max_ndoc ... 53 more documents ]
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'corpus'</li><li>'character'</li></ol>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="printcorpus-docvarscorpus-summarycorpus-docnamescorpus">print(corpus), docvars(corpus), summary(corpus), docnames(corpus)<a class="anchor-link" href="#printcorpus-docvarscorpus-summarycorpus-docnamescorpus">&#182;</a></h2><p><strong>docvars:</strong> Las "docvars" (variables de documento) son metadatos asociados a cada documento en un corpus. Representan información adicional o atributos que pueden estar relacionados con los textos contenidos en el corpus.</p>
+<p>Las docvars son útiles para almacenar información contextual sobre los documentos, como el autor, el género, la fecha, la fuente o cualquier otro atributo relevante que se quiera asociar a los textos. Estas variables pueden ser de diferentes tipos, como cadenas de texto, fechas, números o factores categóricos.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="nf">docvars</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span>
+</pre></div>
+<div id="cell-3" class="clipboard-copy-txt">head(docvars(data_corpus_inaugural))
+
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>Year</th><th scope=col>President</th><th scope=col>FirstName</th><th scope=col>Party</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1789</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>2</th><td>1793</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>3</th><td>1797</td><td>Adams     </td><td>John  </td><td>Federalist           </td></tr>
+	<tr><th scope=row>4</th><td>1801</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>5</th><td>1805</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>6</th><td>1809</td><td>Madison   </td><td>James </td><td>Democratic-Republican</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>summary(corpus)</strong></p>
+<p>Otra forma de obtener una visión general condensada de un corpus es utilizar la función <strong>summary()</strong>. <strong>summary()</strong> es una función base de R (es decir, una función incorporada en R) y proporciona información resumida básica sobre el objeto en cuestión.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span>
+<span class="nf">tail</span><span class="p">(</span><span class="nf">summary</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt">head(summary(data_corpus_inaugural))
+tail(summary(data_corpus_inaugural))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<table class="dataframe">
+<caption>A data.frame: 6 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>Text</th><th scope=col>Types</th><th scope=col>Tokens</th><th scope=col>Sentences</th><th scope=col>Year</th><th scope=col>President</th><th scope=col>FirstName</th><th scope=col>Party</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1789-Washington</td><td>625</td><td>1537</td><td>23</td><td>1789</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>2</th><td>1793-Washington</td><td> 96</td><td> 147</td><td> 4</td><td>1793</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>3</th><td>1797-Adams     </td><td>826</td><td>2577</td><td>37</td><td>1797</td><td>Adams     </td><td>John  </td><td>Federalist           </td></tr>
+	<tr><th scope=row>4</th><td>1801-Jefferson </td><td>717</td><td>1923</td><td>41</td><td>1801</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>5</th><td>1805-Jefferson </td><td>804</td><td>2380</td><td>45</td><td>1805</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>6</th><td>1809-Madison   </td><td>535</td><td>1261</td><td>21</td><td>1809</td><td>Madison   </td><td>James </td><td>Democratic-Republican</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<table class="dataframe">
+<caption>A data.frame: 6 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>Text</th><th scope=col>Types</th><th scope=col>Tokens</th><th scope=col>Sentences</th><th scope=col>Year</th><th scope=col>President</th><th scope=col>FirstName</th><th scope=col>Party</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>54</th><td>2001-Bush </td><td>621</td><td>1806</td><td> 97</td><td>2001</td><td>Bush </td><td>George W.</td><td>Republican</td></tr>
+	<tr><th scope=row>55</th><td>2005-Bush </td><td>772</td><td>2312</td><td> 99</td><td>2005</td><td>Bush </td><td>George W.</td><td>Republican</td></tr>
+	<tr><th scope=row>56</th><td>2009-Obama</td><td>938</td><td>2689</td><td>110</td><td>2009</td><td>Obama</td><td>Barack   </td><td>Democratic</td></tr>
+	<tr><th scope=row>57</th><td>2013-Obama</td><td>814</td><td>2317</td><td> 88</td><td>2013</td><td>Obama</td><td>Barack   </td><td>Democratic</td></tr>
+	<tr><th scope=row>58</th><td>2017-Trump</td><td>582</td><td>1660</td><td> 88</td><td>2017</td><td>Trump</td><td>Donald J.</td><td>Republican</td></tr>
+	<tr><th scope=row>59</th><td>2021-Biden</td><td>812</td><td>2766</td><td>216</td><td>2021</td><td>Biden</td><td>Joseph R.</td><td>Democratic</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Types</strong>  : Número de tokens únicos - ntype()</p>
+<p><strong>Tokens</strong> : Número total de tokens – ntoken()</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">ntype</span><span class="p">(</span><span class="nf">tail</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">ntoken</span><span class="p">(</span><span class="nf">tail</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)))</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">print(ntype(tail(data_corpus_inaugural)))
+print(ntoken(tail(data_corpus_inaugural)))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre> 2001-Bush  2005-Bush 2009-Obama 2013-Obama 2017-Trump 2021-Biden 
+       621        772        938        814        582        812 
+ 2001-Bush  2005-Bush 2009-Obama 2013-Obama 2017-Trump 2021-Biden 
+      1806       2312       2689       2317       1660       2766 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>docnames(corpus)</strong></p>
+<p>Cuando se crea un corpus en quanteda, se asigna a cada documento un nombre o identificador único. Estos nombres o identificadores se almacenan en el atributo "docnames" del corpus. Los docnames son útiles para realizar operaciones específicas en documentos individuales dentro del corpus, como recuperar un documento en particular para su análisis o referencia.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">docnames</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span> <span class="o">%&gt;%</span>
+  <span class="nf">head</span><span class="p">()</span> <span class="o">%&gt;%</span>
+  <span class="nf">print</span><span class="p">()</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">docnames(data_corpus_inaugural) %>%
+  head() %>%
+  print()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[1] &#34;1789-Washington&#34; &#34;1793-Washington&#34; &#34;1797-Adams&#34;      &#34;1801-Jefferson&#34; 
+[5] &#34;1805-Jefferson&#34;  &#34;1809-Madison&#34;   
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>meta(corpus):</strong></p>
+<p>Cada corpus también puede contener metadatos a nivel de corpus, con información sobre cualquier aspecto del mismo. Toma la forma de una lista (list).</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">meta</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt">print(meta(data_corpus_inaugural))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>$description
+[1] &#34;Transcripts of all inaugural addresses delivered by United States Presidents, from Washington 1789 onward.  Data compiled by Gerhard Peters.&#34;
+
+$source
+[1] &#34;Gerhard Peters and John T. Woolley. The American Presidency Project.&#34;
+
+$url
+[1] &#34;https://www.presidency.ucsb.edu/documents/presidential-documents-archive-guidebook/inaugural-addresses&#34;
+
+$author
+[1] &#34;(various US Presidents)&#34;
+
+$keywords
+[1] &#34;political&#34;     &#34;US politics&#34;   &#34;United States&#34; &#34;presidents&#34;   
+[5] &#34;presidency&#34;   
+
+$title
+[1] &#34;US presidential inaugural address speeches&#34;
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="ii-tokenization"><strong>II. Tokenization</strong><a class="anchor-link" href="#ii-tokenization">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>La <strong>tokenización</strong> es un proceso que consiste en dividir un texto en unidades más pequeñas llamadas tokens. Un token puede ser una palabra, un número, un signo de puntuación o cualquier otra unidad significativa de texto.</p>
+<p>El objetivo de la tokenización es convertir un texto en una secuencia estructurada de tokens que luego se puede utilizar para análisis.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="un-primer-ejemplo">Un Primer Ejemplo<a class="anchor-link" href="#un-primer-ejemplo">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Consideremos el siguiente texto:</p>
+<p>"Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento."</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">my_text</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
+<span class="s">&quot;Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt">my_text <- c(
+"Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento."
+)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">my_corpus</span> <span class="o">&lt;-</span> <span class="nf">corpus</span><span class="p">(</span><span class="n">my_text</span><span class="p">)</span>
+<span class="n">my_corpus</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt">my_corpus <- corpus(my_text)
+my_corpus</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">my_corpus</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">toks <- tokens(my_corpus)
+print(toks)
+class(toks)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_lower</span> <span class="o">&lt;-</span> <span class="nf">tokens_tolower</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks_lower</span><span class="p">)</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">toks_lower <- tokens_tolower(toks)
+print(toks_lower)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop</span> <span class="o">&lt;-</span><span class="nf">tokens</span><span class="p">(</span><span class="n">toks_lower</span><span class="p">,</span> <span class="n">remove_punct</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">|&gt;</span>
+  <span class="nf">tokens_remove</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;es&quot;</span><span class="p">))</span>
+
+<span class="n">toks_nopunct_stop</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt">toks_nopunct_stop <-tokens(toks_lower, remove_punct = TRUE) |>
+  tokens_remove(pattern = stopwords("es"))
+
+toks_nopunct_stop </div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop_stem</span> <span class="o">&lt;-</span> <span class="nf">tokens_wordstem</span><span class="p">(</span><span class="n">toks_nopunct_stop</span><span class="p">)</span>
+<span class="n">toks_nopunct_stop_stem</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">toks_nopunct_stop_stem <- tokens_wordstem(toks_nopunct_stop)
+toks_nopunct_stop_stem</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Mh....</p>
+<p>La biblioteca <strong>SnowballC</strong> se utiliza en diversos lenguajes de programación, incluyendo R, para proporcionar implementaciones eficientes de algoritmos de stemming para diferentes idiomas. En el caso de R, se puede utilizar en conjunto con la biblioteca quanteda para realizar el stemming de palabras en textos en español u otros idiomas compatibles.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;SnowballC&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">SnowballC</span><span class="p">)</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt">install.packages("SnowballC")
+library(SnowballC)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop_stem</span> <span class="o">&lt;-</span> <span class="nf">tokens_wordstem</span><span class="p">(</span><span class="n">toks_nopunct_stop</span><span class="p">,</span> <span class="n">language</span> <span class="o">=</span> <span class="s">&quot;spanish&quot;</span><span class="p">)</span>
+<span class="n">toks_nopunct_stop_stem</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt">toks_nopunct_stop_stem <- tokens_wordstem(toks_nopunct_stop, language = "spanish")
+toks_nopunct_stop_stem</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="discursos-inaugurales">Discursos Inaugurales<a class="anchor-link" href="#discursos-inaugurales">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt">toks <- tokens(data_corpus_inaugural)
+print(toks)
+class(toks)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="tokens-guiones-y-palabras-compuestas">Tokens, Guiones y Palabras Compuestas<a class="anchor-link" href="#tokens-guiones-y-palabras-compuestas">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>tokens(corpus), tokens(corpus, split_hyphens = TRUE)</strong></p>
+<p><strong>Texto con guiones</strong> - "Fellow-Citizens", "God-given", "non-believers“, "self-reliance", "self-supporting",</p>
+<p>"well-spent", "well-regulated", etc…</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="c1"># Hypehns ----</span>
+<span class="n">toks_split</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">,</span> <span class="n">split_hyphens</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks_split</span><span class="p">)</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt"># Hypehns ----
+toks_split <- tokens(data_corpus_inaugural, split_hyphens = TRUE)
+print(toks_split)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">ntoken</span><span class="p">(</span><span class="n">toks</span><span class="p">))</span>
+<span class="nf">sum</span><span class="p">(</span><span class="nf">ntoken</span><span class="p">(</span><span class="n">toks_split</span><span class="p">))</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt">sum(ntoken(toks))
+sum(ntoken(toks_split))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="mayusculas-signos-de-puntuacion-y-stop-words">May&#250;sculas, Signos de Puntuaci&#243;n y "Stop Words"<a class="anchor-link" href="#mayusculas-signos-de-puntuacion-y-stop-words">&#182;</a></h2><p><strong>tokens_tolower(toks)</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-19">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_lower</span> <span class="o">&lt;-</span> <span class="nf">tokens_tolower</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks_lower</span><span class="p">)</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt">toks_lower <- tokens_tolower(toks)
+print(toks_lower)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Eliminar los signos de puntuación y las “stop words”</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop</span> <span class="o">&lt;-</span><span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">,</span> <span class="n">remove_punct</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">|&gt;</span>
+  <span class="nf">tokens_remove</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks_nopunct_stop</span><span class="p">)</span>
+</pre></div>
+<div id="cell-20" class="clipboard-copy-txt">toks_nopunct_stop <-tokens(data_corpus_inaugural, remove_punct = TRUE) |>
+  tokens_remove(pattern = stopwords("en"))
+print(toks_nopunct_stop)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>¿Qué palabras considera Quanteda como "stop words"</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">stopwords_en</span> <span class="o">&lt;-</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">)</span>
+</pre></div>
+<div id="cell-21" class="clipboard-copy-txt">stopwords_en <- stopwords("en")</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="n">stopwords_en</span><span class="p">)</span>
+</pre></div>
+<div id="cell-22" class="clipboard-copy-txt">print(stopwords_en)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-23">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">stopwords_sp</span> <span class="o">&lt;-</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;spanish&quot;</span><span class="p">)</span>
+<span class="n">stopwords_sp</span>
+</pre></div>
+<div id="cell-23" class="clipboard-copy-txt">stopwords_sp <- stopwords("spanish")
+stopwords_sp</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>¿Por qué eliminar las "stop words"?</p>
+<ol>
+<li><p>Reducción del ruido: Las stopwords son palabras muy comunes en un idioma determinado, como "el", "de", "y", "a", etc. Estas palabras suelen tener poca información semántica y, en muchos casos, no aportan un valor significativo al análisis de texto. Al eliminar las stopwords, se reduce el ruido en los datos y se enfoca en las palabras más relevantes para el análisis.</p>
+</li>
+<li><p>Mejora de la eficiencia computacional: Las stopwords son palabras que aparecen con mucha frecuencia en los documentos. Al eliminarlas, se reduce la cantidad de palabras en el texto, lo que a su vez reduce la cantidad de cálculos y operaciones necesarias durante el análisis. Esto puede acelerar el procesamiento y mejorar la eficiencia computacional.</p>
+</li>
+</ol>
+<ol>
+<li>Enfocarse en el contexto y las palabras clave: Al eliminar las stopwords, se puede poner mayor énfasis en las palabras que tienen más peso semántico y contribuyen significativamente al significado y al contexto de un texto. Esto puede ayudar a identificar y analizar las palabras clave, los patrones y las relaciones más relevantes en el análisis de texto.</li>
+</ol>
+<p>Es importante destacar que la eliminación de stopwords no es aplicable en todos los casos y en todos los tipos de análisis de texto. En algunos casos, como el análisis de contexto o la identificación de temas generales, las stopwords pueden contener información relevante y no deben eliminarse. Por lo tanto, es esencial considerar el contexto y los objetivos del análisis antes de decidir si es apropiado eliminar o conservar las stopwords.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-24">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop_low</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">,</span> <span class="n">remove_punct</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,)</span>  <span class="o">|&gt;</span>
+  <span class="nf">tokens_remove</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">))</span>  <span class="o">|&gt;</span>
+  <span class="nf">tokens_tolower</span><span class="p">()</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">toks_nopunct_stop_low</span><span class="p">)</span>
+</pre></div>
+<div id="cell-24" class="clipboard-copy-txt">toks_nopunct_stop_low <- tokens(data_corpus_inaugural, remove_punct = TRUE,)  |>
+  tokens_remove(pattern = stopwords("en"))  |>
+  tokens_tolower()
+
+print(toks_nopunct_stop_low)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="iii-stemming">III. Stemming<a class="anchor-link" href="#iii-stemming">&#182;</a></h1><p>El <strong>stemming</strong> simplifica las palabras a su forma básica (es decir, a su raíz). Esencialmente, logra categorizar palabras muy relacionadas como idénticas en lugar de considerarlas como  diferentes. Por ejemplo, <em>run</em>, <em>runner</em>, <em>running</em> tienen la raíz <em>run</em>.</p>
+<p>El objetivo del stemming es reducir diferentes variantes morfológicas de una palabra a una forma común o raíz, conocida como <strong>"stem"</strong> o <strong>"raíz léxica"</strong>. El proceso de stemming ayuda a agrupar las palabras que tienen una relación semántica similar, pero que pueden tener diferentes formas debido a la conjugación, pluralización u otras modificaciones morfológicas. Al reducir las palabras a su forma base, se pueden agrupar y analizar más eficientemente, lo que facilita tareas como la búsqueda de palabras clave, la clasificación de textos o la recuperación de información.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-25">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">tokens_wordstem</span><span class="p">(</span><span class="n">toks_nopunct_stop_low</span><span class="p">)</span>
+</pre></div>
+<div id="cell-25" class="clipboard-copy-txt">tokens_wordstem(toks_nopunct_stop_low)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>En cuanto a las limitaciones inherentes al stemming,  probablemente el problema más importante está relacionado con el <strong>over-stemming</strong> (situación en la que dos palabras no relacionadas se reducen a la misma raíz) y el <strong>under-stemming</strong> (situación en la que dos palabras relacionadas se reducen a diferentes raíces). En este sentido, trabajar con la versión <em>stemmed</em> de un corpus requiere más intervención "humana" para que el analista pueda evaluar correctamente el significado correcto de una palabra <strong>stemmed</strong>.
+(<em>over-stemming</em> y  <em>under-stemming</em> me recuerdan el trade-off entre <em>over-fitting</em> y <em>under-fitting</em> en modelos de ML).</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="iv-key-words-in-context-kwic">IV. Key Words in Context - kwic()<a class="anchor-link" href="#iv-key-words-in-context-kwic">&#182;</a></h1><p><strong>kwic()</strong> se utiliza para crear una lista o índice alfabético de palabras de un corpus, junto con una cantidad dada de palabras antes y después de las palabras clave elegidas para contextualizar su significado.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-26">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span>
+<span class="n">kw_inaug</span> <span class="o">&lt;-</span> <span class="nf">kwic</span><span class="p">(</span><span class="n">toks</span><span class="p">,</span> <span class="n">pattern</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;liberty&quot;</span><span class="p">,</span> <span class="s">&quot;people&quot;</span><span class="p">),</span> <span class="n">window</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">tail</span><span class="p">(</span><span class="n">kw_inaug</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span>
+</pre></div>
+<div id="cell-26" class="clipboard-copy-txt">toks <- tokens(data_corpus_inaugural)
+kw_inaug <- kwic(toks, pattern = c("liberty", "people"), window = 4)
+print(tail(kw_inaug, 10))
+
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Nótese que en este caso, se utiliza la versión más básica del texto tokenizado.  Al utilizar la versión básica del texto tokenizado, se pueden presentar las palabras clave junto con su contexto de manera más clara en un lenguage que hace más sencilla la interpretación humana.</p>
+
+</div>
+</div>
 </div>
 </div>
 </div>

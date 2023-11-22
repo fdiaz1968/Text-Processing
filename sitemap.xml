@@ -6,6 +6,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://github.com/ferdiaz1968/Text-Processing/1_Limpieza_procesamiento_transformacion/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/ferdiaz1968/Text-Processing/2_DFM/</loc>
+         <lastmod>2023-11-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://github.com/ferdiaz1968/Text-Processing/__init__/</loc>
          <lastmod>2023-11-22</lastmod>
          <changefreq>daily</changefreq>

@@ -10,14 +10,14 @@
         <meta name="author" content="Fernando Díaz">
       
       
-        <link rel="canonical" href="https://github.com/ferdiaz1968/Text-Processing/__init__/">
+        <link rel="canonical" href="https://github.com/ferdiaz1968/Text-Processing/2_DFM/">
       
       <link rel="icon" href="../images/logo_python.svg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
-        <title>-*- coding: utf-8 -*- - Home</title>
+        <title>I. Document Feature Matrix (dfm) - Home</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#i-document-feature-matrix-dfm" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              -*- coding: utf-8 -*-
+              I. Document Feature Matrix (dfm)
             
           </span>
         </div>
@@ -375,6 +380,44 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-ejemplo" class="md-nav__link">
+    Un ejemplo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokenizar-el-corpus" class="md-nav__link">
+    Tokenizar el Corpus
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crear-una-dfm" class="md-nav__link">
+    Crear una dfm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sparsity" class="md-nav__link">
+    Sparsity
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -387,8 +430,6 @@
               
                 
 
-
-  <h1>-*- coding: utf-8 -*-</h1>
 
 <script>
 (function (global, factory) {
@@ -1419,13 +1460,27 @@ Licensed under the Apache License, Version 2.0.
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><div class="jupyter-wrapper"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+    <!-- End of mathjax configuration --><div class="jupyter-wrapper">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="i-document-feature-matrix-dfm">I. Document Feature Matrix (dfm)<a class="anchor-link" href="#i-document-feature-matrix-dfm">&#182;</a></h1><p>Un <strong>dfm</strong> una representación de texto que muestra la frecuencia de ocurrencia de las palabras en un corpus de documentos.</p>
+<p>En un dfm, las filas representan los documentos individuales del corpus y las columnas representan los términos presentes en los documentos. Cada celda de la matriz indica la frecuencia con la que un término ocurre en un documento en particular.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
         
         
         <div class="CodeMirror cm-s-jupyter">
@@ -1440,14 +1495,2109 @@ Licensed under the Apache License, Version 2.0.
                 </div>
             </clipboard-copy>
         </div>
-            <div class="highlight-ipynb hl-R"><pre><span></span>__<span class="n">version__</span> <span class="o">=</span> <span class="s">&quot;0.1.0&quot;</span>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="c1">#install.packages(&quot;quanteda&quot;)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">quanteda</span><span class="p">)</span>
 </pre></div>
-<div id="cell-1" class="clipboard-copy-txt">__version__ = "0.1.0"</div>
+<div id="cell-1" class="clipboard-copy-txt">#install.packages("quanteda")
+library(quanteda)
+</div>
     
         </div>
     </div>
 
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>Package version: 3.3.1
+Unicode version: 13.0
+ICU version: 69.1
+
+Parallel computing: 20 of 20 threads used.
+
+See https://quanteda.io for tutorials and examples.
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="un-ejemplo">Un ejemplo<a class="anchor-link" href="#un-ejemplo">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-2">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">my_text</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span>
+<span class="s">&quot;Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento.&quot;</span><span class="p">,</span> <span class="s">&quot;Las empresas, los emprendedores</span>
+<span class="s"> y sus emprendimientos generan riqueza.&quot;</span>
+<span class="p">)</span>
+
+<span class="n">my_corpus</span> <span class="o">&lt;-</span> <span class="nf">corpus</span><span class="p">(</span><span class="n">my_text</span><span class="p">)</span>
+<span class="n">my_corpus</span>
+</pre></div>
+<div id="cell-2" class="clipboard-copy-txt">my_text <- c(
+"Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento.", "Las empresas, los emprendedores
+ y sus emprendimientos generan riqueza."
+)
+
+my_corpus <- corpus(my_text)
+my_corpus</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>text1</dt><dd>'Mario es un gran empresario. Creó su propia empresa a partir de un modesto emprendimiento.'</dd><dt>text2</dt><dd>'Las empresas, los emprendedores\n y sus emprendimientos generan riqueza.'</dd></dl>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-3">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">my_corpus</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+</pre></div>
+<div id="cell-3" class="clipboard-copy-txt">toks <- tokens(my_corpus)
+print(toks)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Tokens consisting of 2 documents.
+text1 :
+ [1] &#34;Mario&#34;      &#34;es&#34;         &#34;un&#34;         &#34;gran&#34;       &#34;empresario&#34;
+ [6] &#34;.&#34;          &#34;Creó&#34;       &#34;su&#34;         &#34;propia&#34;     &#34;empresa&#34;   
+[11] &#34;a&#34;          &#34;partir&#34;    
+[ ... and 5 more ]
+
+text2 :
+ [1] &#34;Las&#34;             &#34;empresas&#34;        &#34;,&#34;               &#34;los&#34;            
+ [5] &#34;emprendedores&#34;   &#34;y&#34;               &#34;sus&#34;             &#34;emprendimientos&#34;
+ [9] &#34;generan&#34;         &#34;riqueza&#34;         &#34;.&#34;              
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-4">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">my_first_dfm</span><span class="o">&lt;-</span> <span class="nf">dfm</span><span class="p">(</span><span class="n">toks</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_first_dfm</span><span class="p">)</span>
+</pre></div>
+<div id="cell-4" class="clipboard-copy-txt">my_first_dfm<- dfm(toks)
+print(my_first_dfm)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 2 documents, 25 features (48.00% sparse) and 0 docvars.
+       features
+docs    mario es un gran empresario . creó su propia empresa
+  text1     1  1  2    1          1 2    1  1      1       1
+  text2     0  0  0    0          0 1    0  0      0       0
+[ reached max_nfeat ... 15 more features ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-5">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">my_firt_matrix</span> <span class="o">&lt;-</span>  <span class="nf">convert</span><span class="p">(</span><span class="n">my_first_dfm</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="s">&quot;data.frame&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">my_firt_matrix</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">my_firt_matrix</span><span class="p">)</span>
+</pre></div>
+<div id="cell-5" class="clipboard-copy-txt">my_firt_matrix <-  convert(my_first_dfm, to = "data.frame")
+print(my_firt_matrix)
+names(my_firt_matrix)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>  doc_id mario es un gran empresario . creó su propia empresa a partir de
+1  text1     1  1  2    1          1 2    1  1      1       1 1      1  1
+2  text2     0  0  0    0          0 1    0  0      0       0 0      0  0
+  modesto emprendimiento las empresas , los emprendedores y sus emprendimientos
+1       1              1   0        0 0   0             0 0   0               0
+2       0              0   1        1 1   1             1 1   1               1
+  generan riqueza
+1       0       0
+2       1       1
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'doc_id'</li><li>'mario'</li><li>'es'</li><li>'un'</li><li>'gran'</li><li>'empresario'</li><li>'.'</li><li>'creó'</li><li>'su'</li><li>'propia'</li><li>'empresa'</li><li>'a'</li><li>'partir'</li><li>'de'</li><li>'modesto'</li><li>'emprendimiento'</li><li>'las'</li><li>'empresas'</li><li>','</li><li>'los'</li><li>'emprendedores'</li><li>'y'</li><li>'sus'</li><li>'emprendimientos'</li><li>'generan'</li><li>'riqueza'</li></ol>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="tokenizar-el-corpus">Tokenizar el Corpus<a class="anchor-link" href="#tokenizar-el-corpus">&#182;</a></h2><p>Para crear un dfm a partir de un corpus, primero hay que tokenizarlo. Para ello, hay que decidir qué pasos de preprocesamiento se van a dar antes de convertir los datos en un dfm.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-6">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop_low</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">,</span> <span class="n">remove_punct</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span>
+                         <span class="nf">tokens_remove</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+                         <span class="nf">tokens_tolower</span><span class="p">()</span>
+<span class="n">toks_nopunct_stop_low</span>
+</pre></div>
+<div id="cell-6" class="clipboard-copy-txt">toks_nopunct_stop_low <- tokens(data_corpus_inaugural, remove_punct = TRUE) %>%
+                         tokens_remove(pattern = stopwords("en")) %>%
+                         tokens_tolower()
+toks_nopunct_stop_low</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>Tokens consisting of 59 documents and 4 docvars.
+1789-Washington :
+ [1] &#34;fellow-citizens&#34; &#34;senate&#34;          &#34;house&#34;           &#34;representatives&#34;
+ [5] &#34;among&#34;           &#34;vicissitudes&#34;    &#34;incident&#34;        &#34;life&#34;           
+ [9] &#34;event&#34;           &#34;filled&#34;          &#34;greater&#34;         &#34;anxieties&#34;      
+[ ... and 640 more ]
+
+1793-Washington :
+ [1] &#34;fellow&#34;     &#34;citizens&#34;   &#34;called&#34;     &#34;upon&#34;       &#34;voice&#34;     
+ [6] &#34;country&#34;    &#34;execute&#34;    &#34;functions&#34;  &#34;chief&#34;      &#34;magistrate&#34;
+[11] &#34;occasion&#34;   &#34;proper&#34;    
+[ ... and 50 more ]
+
+1797-Adams :
+ [1] &#34;first&#34;       &#34;perceived&#34;   &#34;early&#34;       &#34;times&#34;       &#34;middle&#34;     
+ [6] &#34;course&#34;      &#34;america&#34;     &#34;remained&#34;    &#34;unlimited&#34;   &#34;submission&#34; 
+[11] &#34;foreign&#34;     &#34;legislature&#34;
+[ ... and 1,058 more ]
+
+1801-Jefferson :
+ [1] &#34;friends&#34;   &#34;fellow&#34;    &#34;citizens&#34;  &#34;called&#34;    &#34;upon&#34;      &#34;undertake&#34;
+ [7] &#34;duties&#34;    &#34;first&#34;     &#34;executive&#34; &#34;office&#34;    &#34;country&#34;   &#34;avail&#34;    
+[ ... and 801 more ]
+
+1805-Jefferson :
+ [1] &#34;proceeding&#34;    &#34;fellow&#34;        &#34;citizens&#34;      &#34;qualification&#34;
+ [5] &#34;constitution&#34;  &#34;requires&#34;      &#34;entrance&#34;      &#34;charge&#34;       
+ [9] &#34;conferred&#34;     &#34;duty&#34;          &#34;express&#34;       &#34;deep&#34;         
+[ ... and 999 more ]
+
+1809-Madison :
+ [1] &#34;unwilling&#34;  &#34;depart&#34;     &#34;examples&#34;   &#34;revered&#34;    &#34;authority&#34; 
+ [6] &#34;avail&#34;      &#34;occasion&#34;   &#34;now&#34;        &#34;presented&#34;  &#34;express&#34;   
+[11] &#34;profound&#34;   &#34;impression&#34;
+[ ... and 514 more ]
+
+[ reached max_ndoc ... 53 more documents ]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="crear-una-dfm">Crear una dfm<a class="anchor-link" href="#crear-una-dfm">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-7">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">dfm_inaug_nostem</span> <span class="o">&lt;-</span> <span class="nf">dfm</span><span class="p">(</span><span class="n">toks_nopunct_stop_low</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">)</span>
+</pre></div>
+<div id="cell-7" class="clipboard-copy-txt">dfm_inaug_nostem <- dfm(toks_nopunct_stop_low)
+print(dfm_inaug_nostem)
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 9,285 features (92.70% sparse) and 4 docvars.
+                 features
+docs              fellow-citizens senate house representatives among
+  1789-Washington               1      1     2               2     1
+  1793-Washington               0      0     0               0     0
+  1797-Adams                    3      1     0               2     4
+  1801-Jefferson                2      0     0               0     1
+  1805-Jefferson                0      0     0               0     7
+  1809-Madison                  1      0     0               0     0
+                 features
+docs              vicissitudes incident life event filled
+  1789-Washington            1        1    1     2      1
+  1793-Washington            0        0    0     0      0
+  1797-Adams                 0        0    2     0      0
+  1801-Jefferson             0        0    1     0      0
+  1805-Jefferson             0        0    2     0      0
+  1809-Madison               0        0    1     0      1
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 9,275 more features ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>El dfm consta de 9.285 <em>features</em> que comprenden palabras, números y símbolos en este caso concreto. Si no se hubieran eliminado los signos de puntuación, también se habrían incluido.</p>
+<p>Queda claro que un "feature" o "característica" se refiere a un término o palabra que se utiliza para representar una columna en la matriz. Las características en un dfm son entonces términos o palabras que se extraen de los documentos del corpus y se utilizan para construir la representación matricial. Estas características pueden incluir palabras individuales, combinaciones de palabras (n-gramas), características léxicas, características sintácticas o cualquier otro elemento que se considere relevante para el análisis de texto.</p>
+<p>Por ejemplo, en un corpus de documentos relacionados con el análisis de sentimientos en redes sociales, las características en el dfm podrían ser palabras o frases que reflejen emociones como "feliz", "triste", "enfurecido", "alegre", etc.</p>
+<p>¿Qué pasaría con el número de features si hubiésemos hecho stemming en el procesamiento del texto?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-8">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks_nopunct_stop_low_stem</span> <span class="o">&lt;-</span> <span class="nf">tokens_wordstem</span><span class="p">(</span><span class="n">toks_nopunct_stop_low</span><span class="p">)</span>
+<span class="n">dfm_inaug_stem</span> <span class="o">&lt;-</span> <span class="nf">dfm</span><span class="p">(</span><span class="n">toks_nopunct_stop_low_stem</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dfm_inaug_stem</span><span class="p">)</span>
+</pre></div>
+<div id="cell-8" class="clipboard-copy-txt">toks_nopunct_stop_low_stem <- tokens_wordstem(toks_nopunct_stop_low)
+dfm_inaug_stem <- dfm(toks_nopunct_stop_low_stem)
+print(dfm_inaug_stem)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 5,458 features (89.34% sparse) and 4 docvars.
+                 features
+docs              fellow-citizen senat hous repres among vicissitud incid life
+  1789-Washington              1     1    2      2     1          1     1    1
+  1793-Washington              0     0    0      0     0          0     0    0
+  1797-Adams                   3     1    3      3     4          0     0    2
+  1801-Jefferson               2     0    0      1     1          0     0    1
+  1805-Jefferson               0     0    0      0     7          0     0    2
+  1809-Madison                 1     0    0      1     0          1     0    1
+                 features
+docs              event fill
+  1789-Washington     2    1
+  1793-Washington     0    0
+  1797-Adams          0    0
+  1801-Jefferson      0    0
+  1805-Jefferson      1    0
+  1809-Madison        0    1
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 5,448 more features ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="sparsity">Sparsity<a class="anchor-link" href="#sparsity">&#182;</a></h2><p>Document-feature matrix of: 59 documents, 9,285 features (92.70% sparse) and 4 docvars.</p>
+<p><strong>Sparsity</strong>, en el contexto más general, se refiere a la propiedad de tener una gran cantidad de elementos o valores nulos o ceros en relación con el total de elementos posibles.</p>
+<p>La sparsity indica la falta de densidad o la falta de presencia significativa de elementos en una estructura de datos o matriz. Por ejemplo, si se tiene una matriz de números donde la mayoría de los elementos son cero y solo unos pocos tienen valores diferentes de cero, se puede decir que la matriz es "sparse" o dispersa.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="ii-seleccionado-features-o-caracteristicas">II. Seleccionado <strong>features</strong> o Caracter&#237;sticas<a class="anchor-link" href="#ii-seleccionado-features-o-caracteristicas">&#182;</a></h1><p>Existen varias funciones que se pueden utilizar para seleccionar y explorar <em>features</em> tras convertir documentos textuales a un dfm.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="topfeatures"><strong>topfeatures()</strong><a class="anchor-link" href="#topfeatures">&#182;</a></h2><p>La función <strong>topfeatures()</strong> permite consultar las características más frecuentes.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-9">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">))</span>
+</pre></div>
+<div id="cell-9" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_nostem))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>    people government         us        can       must       upon      great 
+       584        564        505        487        376        371        344 
+       may     states      world 
+       343        334        319 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-10">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_stem</span><span class="p">))</span>
+</pre></div>
+<div id="cell-10" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_stem))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>nation govern  peopl     us    can  state  great   must  power   upon 
+   691    657    632    505    487    452    378    376    375    371 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>¿Que diferencias se notan entre las <em>topfeatures</em> de un documento stemmed y el documento not-stemmed?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Por ejemplo, antes del stemming, "nation" ni siquiera aparecía entre las 10 primeras características, lo que ilustra cómo el stemming permite captar el uso de palabras similares de forma diferente.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-11">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">,</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+<div id="cell-11" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_nostem,20))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>    people government         us        can       must       upon      great 
+       584        564        505        487        376        371        344 
+       may     states      world      shall    country     nation      every 
+       343        334        319        316        308        305        300 
+       one      peace        new      power        now     public 
+       267        258        250        241        229        225 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>¿Por qué pasa esto? ¿Se le ocurre como investigarlo?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-12">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="c1"># Key words in context</span>
+<span class="n">kw_nation</span> <span class="o">&lt;-</span> <span class="nf">kwic</span><span class="p">(</span><span class="n">toks_nopunct_stop_low</span><span class="p">,</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s">&quot;nation*&quot;</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="n">kw_nation</span><span class="p">,</span> <span class="m">10</span><span class="p">))</span>
+</pre></div>
+<div id="cell-12" class="clipboard-copy-txt"># Key words in context
+kw_nation <- kwic(toks_nopunct_stop_low, pattern = "nation*")
+print(head(kw_nation, 10))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Keyword-in-context with 10 matches.                                                                             
+ [1789-Washington, 159]           almighty rules universe presides councils |
+ [1789-Washington, 225]           every step advanced character independent |
+ [1789-Washington, 361] assemblage communities interests another foundation |
+ [1789-Washington, 423]                    smiles heaven can never expected |
+       [1797-Adams, 56]    signally protected country first representatives |
+      [1797-Adams, 169]             faith loss consideration credit foreign |
+      [1797-Adams, 179]  partial conventions insurrection threatening great |
+      [1797-Adams, 262]        adapted genius character situation relations |
+      [1797-Adams, 360]               upon peace order prosperity happiness |
+      [1797-Adams, 381]               ancient idea congregations men cities |
+                                                               
+ nations  | whose providential aids can supply                 
+  nation  | seems distinguished token providential agency      
+ national | policy laid pure immutable principles              
+  nation  | disregards eternal rules order right               
+  nation  | consisting little half present number              
+ nations  | length discontents animosities combinations partial
+ national | calamity dangerous crisis people america           
+  nation  | country ever proposed suggested general            
+  nation  | acquired habitual attachment veneration form       
+ nations  | pleasing objects sight superior intelligences      
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-13">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="o">?</span><span class="n">topfeatures</span>
+</pre></div>
+<div id="cell-13" class="clipboard-copy-txt">?topfeatures</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>topfeatures              package:quanteda              R Documentation
+
+_I_d_e_n_t_i_f_y _t_h_e _m_o_s_t _f_r_e_q_u_e_n_t _f_e_a_t_u_r_e_s _i_n _a _d_f_m
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     List the most (or least) frequently occurring features in a dfm,
+     either as a whole or separated by document.
+
+_U_s_a_g_e:
+
+     topfeatures(
+       x,
+       n = 10,
+       decreasing = TRUE,
+       scheme = c(&#34;count&#34;, &#34;docfreq&#34;),
+       groups = NULL
+     )
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: the object whose features will be returned
+
+       n: how many top features should be returned
+
+decreasing: If &#39;TRUE&#39;, return the &#39;n&#39; most frequent features; otherwise
+          return the &#39;n&#39; least frequent features
+
+  scheme: one of &#39;count&#39; for total feature frequency (within &#39;group&#39; if
+          applicable), or &#39;docfreq&#39; for the document frequencies of
+          features
+
+  groups: grouping variable for sampling, equal in length to the number
+          of documents. This will be evaluated in the docvars
+          data.frame, so that docvars may be referred to by name
+          without quoting. This also changes previous behaviours for
+          &#39;groups&#39;. See &#39;news(Version &gt;= &#34;3.0&#34;, package = &#34;quanteda&#34;)&#39;
+          for details.
+
+_V_a_l_u_e:
+
+     A named numeric vector of feature counts, where the names are the
+     feature labels, or a list of these if &#39;groups&#39; is given.
+
+_E_x_a_m_p_l_e_s:
+
+     dfmat1 &lt;- corpus_subset(data_corpus_inaugural, Year &gt; 1980) %&gt;%
+         tokens(remove_punct = TRUE) %&gt;%
+         dfm()
+     dfmat2 &lt;- dfm_remove(dfmat1, stopwords(&#34;en&#34;))
+     
+     # most frequent features
+     topfeatures(dfmat1)
+     topfeatures(dfmat2)
+     
+     # least frequent features
+     topfeatures(dfmat2, decreasing = FALSE)
+     
+     # top features of individual documents
+     topfeatures(dfmat2, n = 5, groups = docnames(dfmat2))
+     
+     # grouping by president last name
+     topfeatures(dfmat2, n = 5, groups = President)
+     
+     # features by document frequencies
+     tail(topfeatures(dfmat1, scheme = &#34;docfreq&#34;, n = 200))
+     </pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="agrupando-por-alguna-variable">Agrupando por alguna variable<a class="anchor-link" href="#agrupando-por-alguna-variable">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-14">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="nf">docvars</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span>
+</pre></div>
+<div id="cell-14" class="clipboard-copy-txt">head(docvars(data_corpus_inaugural))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>Year</th><th scope=col>President</th><th scope=col>FirstName</th><th scope=col>Party</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1789</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>2</th><td>1793</td><td>Washington</td><td>George</td><td>none                 </td></tr>
+	<tr><th scope=row>3</th><td>1797</td><td>Adams     </td><td>John  </td><td>Federalist           </td></tr>
+	<tr><th scope=row>4</th><td>1801</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>5</th><td>1805</td><td>Jefferson </td><td>Thomas</td><td>Democratic-Republican</td></tr>
+	<tr><th scope=row>6</th><td>1809</td><td>Madison   </td><td>James </td><td>Democratic-Republican</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-15">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">,</span><span class="m">5</span><span class="p">,</span> <span class="n">groups</span> <span class="o">=</span> <span class="n">President</span><span class="p">)))</span>
+</pre></div>
+<div id="cell-15" class="clipboard-copy-txt">print(head(topfeatures(dfm_inaug_nostem,5, groups = President)))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>$Adams
+government     people      union       upon    country 
+        33         27         22         21         18 
+
+$Biden
+     us america     can     one  nation 
+     27      18      16      15      12 
+
+$Buchanan
+      states        shall constitution          may       people 
+          22           18           17           15           13 
+
+$Bush
+freedom  nation      us america     can 
+     36      27      27      27      24 
+
+$Carter
+   can nation    new   must     us 
+    13     10      9      8      8 
+
+$Cleveland
+    people government     public      every      shall 
+        35         29         19         14         14 
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-16">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">,</span><span class="m">5</span><span class="p">,</span> <span class="n">groups</span> <span class="o">=</span> <span class="n">Party</span><span class="p">)))</span>
+</pre></div>
+<div id="cell-16" class="clipboard-copy-txt">print(head(topfeatures(dfm_inaug_nostem,5, groups = Party)))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>$Democratic
+        us     people        can government       must 
+       222        199        173        143        138 
+
+$`Democratic-Republican`
+government      great     states        war        may 
+        68         61         56         51         49 
+
+$Federalist
+    people government        may    nations    country 
+        20         16         13         11          9 
+
+$none
+       can      every government        may    present 
+         9          9          9          7          6 
+
+$Republican
+    people government        can         us       must 
+       264        240        228        218        201 
+
+$Whig
+  government       states       people        power constitution 
+          88           61           57           57           55 
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>scheme=count</strong> &amp; <strong>scheme=docfreq</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-17">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">,</span><span class="m">5</span><span class="p">,</span> <span class="n">scheme</span> <span class="o">=</span> <span class="s">&quot;count&quot;</span><span class="p">))</span>
+</pre></div>
+<div id="cell-17" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_nostem,5, scheme = "count"))
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>    people government         us        can       must 
+       584        564        505        487        376 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-18">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_nostem</span><span class="p">,</span><span class="m">5</span><span class="p">,</span> <span class="n">scheme</span> <span class="o">=</span> <span class="s">&quot;docfreq&quot;</span><span class="p">))</span>
+</pre></div>
+<div id="cell-18" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_nostem,5, scheme = "docfreq"))</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre> people     can   great      us country 
+     57      56      56      56      54 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Esto significa que "<em>poeple</em>" aparece 584 veces en 57 de los 59 documentos totales del corpus.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h2 id="dfm_select-dfm_remove-dfm_trim-dfm_select"><strong>dfm_select()</strong>, <strong>dfm_remove()</strong>, <strong>dfm_trim()</strong>, <strong>dfm_select()</strong>,<a class="anchor-link" href="#dfm_select-dfm_remove-dfm_trim-dfm_select">&#182;</a></h2><p>A través de estos comandos se pueden seleccionar características específicas de un objeto dfm.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-19">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="o">?</span><span class="nf">dfm_select</span><span class="p">()</span>
+</pre></div>
+<div id="cell-19" class="clipboard-copy-txt">?dfm_select()</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>dfm_select              package:quanteda               R Documentation
+
+_S_e_l_e_c_t _f_e_a_t_u_r_e_s _f_r_o_m _a _d_f_m _o_r _f_c_m
+
+_D_e_s_c_r_i_p_t_i_o_n:
+
+     This function selects or removes features from a dfm or fcm, based
+     on feature name matches with &#39;pattern&#39;.  The most common usages
+     are to eliminate features from a dfm already constructed, such as
+     stopwords, or to select only terms of interest from a dictionary.
+
+_U_s_a_g_e:
+
+     dfm_select(
+       x,
+       pattern = NULL,
+       selection = c(&#34;keep&#34;, &#34;remove&#34;),
+       valuetype = c(&#34;glob&#34;, &#34;regex&#34;, &#34;fixed&#34;),
+       case_insensitive = TRUE,
+       min_nchar = NULL,
+       max_nchar = NULL,
+       padding = FALSE,
+       verbose = quanteda_options(&#34;verbose&#34;)
+     )
+     
+     dfm_remove(x, ...)
+     
+     dfm_keep(x, ...)
+     
+     fcm_select(
+       x,
+       pattern = NULL,
+       selection = c(&#34;keep&#34;, &#34;remove&#34;),
+       valuetype = c(&#34;glob&#34;, &#34;regex&#34;, &#34;fixed&#34;),
+       case_insensitive = TRUE,
+       verbose = quanteda_options(&#34;verbose&#34;),
+       ...
+     )
+     
+     fcm_remove(x, ...)
+     
+     fcm_keep(x, ...)
+     
+_A_r_g_u_m_e_n_t_s:
+
+       x: the dfm or fcm object whose features will be selected
+
+ pattern: a character vector, list of character vectors, dictionary, or
+          collocations object.  See pattern for details.
+
+selection: whether to &#39;keep&#39; or &#39;remove&#39; the features
+
+valuetype: the type of pattern matching: &#39;&#34;glob&#34;&#39; for &#34;glob&#34;-style
+          wildcard expressions; &#39;&#34;regex&#34;&#39; for regular expressions; or
+          &#39;&#34;fixed&#34;&#39; for exact matching. See valuetype for details.
+
+case_insensitive: logical; if &#39;TRUE&#39;, ignore case when matching a
+          &#39;pattern&#39; or dictionary values
+
+min_nchar, max_nchar: optional numerics specifying the minimum and
+          maximum length in characters for tokens to be removed or
+          kept; defaults are &#39;NULL&#39; for no limits.  These are applied
+          after (and hence, in addition to) any selection based on
+          pattern matches.
+
+ padding: if &#39;TRUE&#39;, record the number of removed tokens in the first
+          column.
+
+ verbose: if &#39;TRUE&#39;, print message about how many pattern were removed
+
+     ...: used only for passing arguments from &#39;dfm_remove&#39; or
+          &#39;dfm_keep&#39; to &#39;dfm_select&#39;. Cannot include &#39;selection&#39;.
+
+_D_e_t_a_i_l_s:
+
+     &#39;dfm_remove&#39; and &#39;fcm_remove&#39; are simply a convenience wrappers to
+     calling &#39;dfm_select&#39; and &#39;fcm_select&#39; with &#39;selection = &#34;remove&#34;&#39;.
+
+     &#39;dfm_keep&#39; and &#39;fcm_keep&#39; are simply a convenience wrappers to
+     calling &#39;dfm_select&#39; and &#39;fcm_select&#39; with &#39;selection = &#34;keep&#34;&#39;.
+
+_V_a_l_u_e:
+
+     A dfm or fcm object, after the feature selection has been applied.
+
+     For compatibility with earlier versions, when &#39;pattern&#39; is a dfm
+     object and &#39;selection = &#34;keep&#34;&#39;, then this will be equivalent to
+     calling &#39;dfm_match()&#39;.  In this case, the following settings are
+     always used: &#39;case_insensitive = FALSE&#39;, and &#39;valuetype =
+     &#34;fixed&#34;&#39;.  This functionality is deprecated, however, and you
+     should use &#39;dfm_match()&#39; instead.
+
+_N_o_t_e:
+
+     This function selects features based on their labels.  To select
+     features based on the values of the document-feature matrix, use
+     &#39;dfm_trim()&#39;.
+
+_S_e_e _A_l_s_o:
+
+     &#39;dfm_match()&#39;
+
+_E_x_a_m_p_l_e_s:
+
+     dfmat &lt;- tokens(c(&#34;My Christmas was ruined by your opposition tax plan.&#34;,
+                    &#34;Does the United_States or Sweden have more progressive taxation?&#34;)) %&gt;%
+         dfm(tolower = FALSE)
+     dict &lt;- dictionary(list(countries = c(&#34;United_States&#34;, &#34;Sweden&#34;, &#34;France&#34;),
+                             wordsEndingInY = c(&#34;by&#34;, &#34;my&#34;),
+                             notintext = &#34;blahblah&#34;))
+     dfm_select(dfmat, pattern = dict)
+     dfm_select(dfmat, pattern = dict, case_insensitive = FALSE)
+     dfm_select(dfmat, pattern = c(&#34;s$&#34;, &#34;.y&#34;), selection = &#34;keep&#34;, valuetype = &#34;regex&#34;)
+     dfm_select(dfmat, pattern = c(&#34;s$&#34;, &#34;.y&#34;), selection = &#34;remove&#34;, valuetype = &#34;regex&#34;)
+     dfm_select(dfmat, pattern = stopwords(&#34;english&#34;), selection = &#34;keep&#34;, valuetype = &#34;fixed&#34;)
+     dfm_select(dfmat, pattern = stopwords(&#34;english&#34;), selection = &#34;remove&#34;, valuetype = &#34;fixed&#34;)
+     
+     # select based on character length
+     dfm_select(dfmat, min_nchar = 5)
+     
+     dfmat &lt;- dfm(tokens(c(&#34;This is a document with lots of stopwords.&#34;,
+                           &#34;No if, and, or but about it: lots of stopwords.&#34;)))
+     dfmat
+     dfm_remove(dfmat, stopwords(&#34;english&#34;))
+     toks &lt;- tokens(c(&#34;this contains lots of stopwords&#34;,
+                      &#34;no if, and, or but about it: lots&#34;),
+                    remove_punct = TRUE)
+     fcmat &lt;- fcm(toks)
+     fcmat
+     fcm_remove(fcmat, stopwords(&#34;english&#34;))
+     </pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="dfm_remove"><strong>dfm_remove()</strong><a class="anchor-link" href="#dfm_remove">&#182;</a></h3><p>Supongamos que no eliminamos los stop-words cuando tokenizamos el documento.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-20">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">toks</span> <span class="o">&lt;-</span> <span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">)</span>
+</pre></div>
+<div id="cell-20" class="clipboard-copy-txt">toks <- tokens(data_corpus_inaugural)
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-21">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">dfm_inaugural_nostop</span> <span class="o">&lt;-</span> <span class="nf">dfm</span><span class="p">(</span><span class="nf">tokens</span><span class="p">(</span><span class="n">data_corpus_inaugural</span><span class="p">))</span> <span class="o">%&gt;%</span>
+             <span class="nf">dfm_remove</span><span class="p">(</span><span class="n">pattern</span> <span class="o">=</span> <span class="nf">stopwords</span><span class="p">(</span><span class="s">&quot;en&quot;</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">dfm_inaugural_nostop</span><span class="p">)</span>
+</pre></div>
+<div id="cell-21" class="clipboard-copy-txt">dfm_inaugural_nostop <- dfm(tokens(data_corpus_inaugural)) %>%
+             dfm_remove(pattern = stopwords("en"))
+
+print(dfm_inaugural_nostop)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 9,303 features (92.65% sparse) and 4 docvars.
+                 features
+docs              fellow-citizens senate house representatives : among
+  1789-Washington               1      1     2               2 1     1
+  1793-Washington               0      0     0               0 1     0
+  1797-Adams                    3      1     0               2 0     4
+  1801-Jefferson                2      0     0               0 1     1
+  1805-Jefferson                0      0     0               0 0     7
+  1809-Madison                  1      0     0               0 0     0
+                 features
+docs              vicissitudes incident life event
+  1789-Washington            1        1    1     2
+  1793-Washington            0        0    0     0
+  1797-Adams                 0        0    2     0
+  1801-Jefferson             0        0    1     0
+  1805-Jefferson             0        0    2     0
+  1809-Madison               0        0    1     0
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 9,293 more features ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="dfm_trim"><strong>dfm_trim()</strong><a class="anchor-link" href="#dfm_trim">&#182;</a></h3><p>Los argumentos de esta función <em>min_termfreq</em> y <em>max_termfreq</em> permiten determinar el umbral de frecuencia para el análisis.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-22">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">dfm_trim</span><span class="p">(</span><span class="n">dfm_inaugural_nostop</span> <span class="p">,</span> <span class="n">min_termfreq</span> <span class="o">=</span> <span class="m">20</span><span class="p">)</span>
+</pre></div>
+<div id="cell-22" class="clipboard-copy-txt">dfm_trim(dfm_inaugural_nostop , min_termfreq = 20)
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output " data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 661 features (59.48% sparse) and 4 docvars.
+                 features
+docs              fellow-citizens : among life greater order   , day present  .
+  1789-Washington               1 1     1    1       1     2  70   2       5 23
+  1793-Washington               0 1     0    0       0     0   5   0       1  4
+  1797-Adams                    3 0     4    2       0     4 201   1       2 33
+  1801-Jefferson                2 1     1    1       1     1 128   1       0 37
+  1805-Jefferson                0 0     7    2       0     3 142   1       3 41
+  1809-Madison                  1 0     0    1       0     0  47   0       1 21
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 651 more features ]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="dfm_select"><strong>dfm_select()</strong><a class="anchor-link" href="#dfm_select">&#182;</a></h3><p>¿Cuántas palabras "largas" hay en los documentos del corpus?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-23">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">dfmat_inaug_long</span> <span class="o">&lt;-</span> <span class="nf">dfm_select</span><span class="p">(</span><span class="n">dfm_inaugural_nostop</span><span class="p">,</span> <span class="n">min_nchar</span> <span class="o">=</span> <span class="m">10</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">dfmat_inaug_long</span><span class="p">)</span>
+</pre></div>
+<div id="cell-23" class="clipboard-copy-txt">dfmat_inaug_long <- dfm_select(dfm_inaugural_nostop, min_nchar = 10)
+print(dfmat_inaug_long)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 2,442 features (95.05% sparse) and 4 docvars.
+                 features
+docs              fellow-citizens representatives vicissitudes notification
+  1789-Washington               1               2            1            1
+  1793-Washington               0               0            0            0
+  1797-Adams                    3               2            0            0
+  1801-Jefferson                2               0            0            0
+  1805-Jefferson                0               0            0            0
+  1809-Madison                  1               0            0            0
+                 features
+docs              transmitted veneration predilection flattering inclination
+  1789-Washington           1          1            1          1           1
+  1793-Washington           0          0            0          0           0
+  1797-Adams                0          2            0          0           1
+  1801-Jefferson            0          0            0          0           0
+  1805-Jefferson            0          0            0          0           0
+  1809-Madison              0          0            0          0           0
+                 features
+docs              interruptions
+  1789-Washington             1
+  1793-Washington             0
+  1797-Adams                  0
+  1801-Jefferson              0
+  1805-Jefferson              0
+  1809-Madison                0
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 2,432 more features ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Quanteda es tremendamente flexible y permite combinar estos comandos.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-24">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="n">dfm_inaug__stem_docfreq</span> <span class="o">&lt;-</span> <span class="nf">dfm_trim</span><span class="p">(</span><span class="n">dfm_inaug_stem</span><span class="p">,</span> <span class="n">min_docfreq</span> <span class="o">=</span> <span class="m">0.90</span><span class="p">,</span> <span class="n">docfreq_type</span> <span class="o">=</span> <span class="s">&quot;prop&quot;</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">dfm_inaug__stem_docfreq</span><span class="p">)</span>
+</pre></div>
+<div id="cell-24" class="clipboard-copy-txt">dfm_inaug__stem_docfreq <- dfm_trim(dfm_inaug_stem, min_docfreq = 0.90, docfreq_type = "prop")
+
+print(dfm_inaug__stem_docfreq)</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Document-feature matrix of: 59 documents, 11 features (6.01% sparse) and 4 docvars.
+                 features
+docs              countri can time nation may peopl govern great world right
+  1789-Washington       5   9    1      4   6     4      9     3     1     2
+  1793-Washington       1   0    0      0   1     1      1     0     0     0
+  1797-Adams           10   9    3     24  13    20     20     5     3     2
+  1801-Jefferson        4   3    0      4   8     2     14     2     3     7
+  1805-Jefferson        5   6    6      6  10     0      3     1     2     4
+  1809-Madison          5   5    1     10   1     1      0     0     2     5
+[ reached max_ndoc ... 53 more documents, reached max_nfeat ... 1 more feature ]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Sólo 11 características aparecen en más del 90% de los documentos....pero sólo vemos 10!</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div><div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+        
+        
+        <div class="CodeMirror cm-s-jupyter">
+        <div class="zeroclipboard-container">
+            <clipboard-copy for="cell-25">
+            <div>
+                <span class="notice" hidden>Copied!</span>
+                <svg aria-hidden="true" width="20" height="20" viewBox="0 0 16 16" version="1.1"  data-view-component="true" class="clipboard-copy-icon">
+                    <path fill="currentColor" fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path>
+                    <path fill="currentColor" fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path>
+                </svg>
+                </div>
+            </clipboard-copy>
+        </div>
+            <div class="highlight-ipynb hl-R"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">topfeatures</span><span class="p">(</span><span class="n">dfm_inaug_stem</span><span class="p">,</span><span class="m">11</span><span class="p">,</span> <span class="n">scheme</span> <span class="o">=</span> <span class="s">&quot;docfreq&quot;</span><span class="p">))</span>
+</pre></div>
+<div id="cell-25" class="clipboard-copy-txt">print(topfeatures(dfm_inaug_stem,11, scheme = "docfreq"))
+</div>
+    
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre> nation   peopl countri     can   great      us   right    time     may  govern 
+     58      57      56      56      56      56      55      54      54      54 
+  world 
+     54 
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>
