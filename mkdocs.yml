@@ -85,9 +85,8 @@ plugins:
 nav:
     - Home: index.md
     - Conceptos Básicos:
-        - intro.ipynb
-        - basic.ipynb
-    - Manipulación Datos:
-        - pandas.ipynb
-        - seaborn.ipynb
+        - 1_Limpieza_procesamiento_transformacion.ipynb
+        - 2_DFM.ipynb
+
+
 
