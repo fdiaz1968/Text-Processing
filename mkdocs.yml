@@ -87,6 +87,7 @@ nav:
     - Conceptos Básicos:
         - 1_Limpieza_procesamiento_transformacion.ipynb
         - 2_DFM.ipynb
-
+    - Estadística Descriptiva para Datos Textuales:
+        - 3_Estad_Descriptiva.ipynb
 
 
