@@ -2,42 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/1_Limpieza_procesamiento_transformacion/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/2_DFM/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/fdiaz1968/Text-Processing/3_Estad_Descriptiva/</loc>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/__init__/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/basic/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/intro/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/pandas/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/fdiaz1968/Text-Processing/seaborn/</loc>
-         <lastmod>2023-11-22</lastmod>
+         <lastmod>2023-11-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
