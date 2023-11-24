@@ -10,6 +10,6 @@ El material está disponible en el siguiente [repositorio](https://github.com/fd
 ## Contenidos temáticos
 
 * Introducción
-* Nomenclatura
-* Introducción Pandas
-* Introducción Seaborn
+* Conceptos Básicos en NLP
+* Estadística Descrptiva y Visualización
+* Distancias Léxicas: Clustering
